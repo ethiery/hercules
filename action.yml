@@ -12,7 +12,8 @@ runs:
   args:
     - "/bin/bash"
     - "-c"
-    - "hercules ${{ inputs.args }} --pb . | labours -m all -f pb --disable-projector -o hercules_charts
+    - "pip install 'matplotlib==3.2.0'
+       && hercules ${{ inputs.args }} --pb . | labours -m all -f pb --disable-projector -o hercules_charts
        && cd hercules_charts
        && tar -cf ../hercules_charts.tar * ../hercules_charts_*
        && cd ..
